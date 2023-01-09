@@ -14,8 +14,8 @@ birthday = os.environ['BIRTHDAY']
 app_id = os.environ["APP_ID"]
 app_secret = os.environ["APP_SECRET"]
 
-women_id = os.environ["women_ID"]
-men_id = os.environ["men_id"]
+women_id = os.environ["WOMEN_ID"]
+men_id = os.environ["MEN_ID"]
 template_id = os.environ["TEMPLATE_ID"]
 
 
@@ -57,4 +57,4 @@ data = {"city": {"value": city}, "weather": {"value": wea}, "temperature": {"val
         "love_days": {"value": get_count()}, "birthday_women": {"value": get_birthday()},"birthday_men": {"value": get_birthday()+1},
         "words": {"value": get_words(), "color": get_random_color()}}
 wm.send_template(women_id, template_id, data)
-wm.send_template(men_id[1], template_id, data)
+wm.send_template(men_id, template_id, data)

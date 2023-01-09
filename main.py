@@ -55,5 +55,6 @@ wea, temperature = get_weather()
 data = {"city": {"value": city}, "weather": {"value": wea}, "temperature": {"value": temperature},
         "love_days": {"value": get_count()}, "birthday_women": {"value": get_birthday()},"birthday_men": {"value": get_birthday()+1},
         "words": {"value": get_words(), "color": get_random_color()}}
-res = wm.send_template(user_id, template_id, data)
-print(res)
+users_id = user_id.split(",")
+wm.send_template(users_id[0], template_id, data)
+wm.send_template(users_id[1], template_id, data)
